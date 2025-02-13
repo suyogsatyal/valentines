@@ -11,8 +11,8 @@
     <style>
         html,
         body {
-            height: 100%;
-            width: 100%;
+            height: 100vh;
+            width: 100vw;
             background-color: #fe344c;
             display: flex;
             justify-content: center;
@@ -36,8 +36,8 @@
             opacity: 0;
             animation: fadeIn 1s ease-in-out 1s forwards, beat 2s infinite ease-out;
             cursor: pointer;
-            outline: none;
-            -webkit-tap-highlight-color: transparent; 
+            outline:none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .big-heart::before,
@@ -347,6 +347,10 @@
     <span class="little-heart heart9"></span>
     <span class="little-heart heart10"></span>
     <span class="little-heart heart11"></span>
+
+    <footer style="position: absolute; bottom: 0; left: 0;opacity: 0; right: 0; text-align: center; color: white; font-size: 1em; padding: 10px; font-family: 'Courier New', Courier, monospace; animation: justAppear .5s ease-in-out 1s forwards; animation-delay: 5s;">
+        Made By <a href="https://github.com/suyogsatyal">Suyog</a>
+    </footer>
 
     <script>
         const romanticMessages = [
