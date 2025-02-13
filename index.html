@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ For ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@700&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #fe344c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin: 0;
+            flex-direction: column;
+            font-family: "Gwendolyn", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Mr+De+Haviland);
+
+        .big-heart {
+            position: relative;
+            width: 20vmin;
+            height: 20vmin;
+            background: white;
+            transform: rotate(45deg);
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1s forwards, beat 2s infinite ease-out;
+            cursor: pointer;
+        }
+
+        .big-heart::before,
+        .big-heart::after {
+            content: '';
+            position: absolute;
+            width: 20vmin;
+            height: 20vmin;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .big-heart::before {
+            top: -10vmin;
+            left: 0;
+        }
+
+        .big-heart::after {
+            top: 0;
+            left: -10vmin;
+        }
+
+        .text-container {
+            padding-top: 50px;
+            font-size: 3em;
+            color: white;
+            opacity: 0;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: justAppear .5s ease-in-out 1s forwards;
+            animation-delay: 1.5s;
+            text-align: center;
+            margin-top: 2vmin;
+        }
+
+        .click {
+            padding-top: 30px;
+            font-size: 2em;
+            color: rgb(241, 194, 194);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 2vmin;
+            /* Position below the heart */
+        }
+
+        .clickAnimation {
+            opacity: 0;
+            animation: clickNotification 3s ease-in-out 1s forwards;
+            animation-delay: 3s;
+        }
+
+        .forcedOpacity {
+            opacity: 1 !important;
+        }
+
+        @keyframes clickNotification {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes justAppear {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes beat {
+
+            0%,
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            15% {
+                transform: rotate(45deg) scale(1.3);
+            }
+
+            30% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            45% {
+                transform: rotate(45deg) scale(1.3);
+            }
+        }
+
+        @keyframes heartClickEffect {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.5);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+
+        .heartClickEffect {
+            animation: heartClickEffect 0.5s ease-in-out;
+        }
+
+        .messageFadeOut {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+
+        .messageFadeIn {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .flying-hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .relativeContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .little-heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            opacity: .8;
+            transform: rotate(45deg);
+            animation: littleHeart 2s infinite ease-out;
+        }
+
+        .little-heart::before,
+        .little-heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .little-heart::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .little-heart::after {
+            top: 0;
+            left: -25px;
+        }
+
+        .heart1 {
+            --scale: 0.7;
+            --rotate: 42deg;
+            --animation-duration: 2.3s;
+            bottom: -200px;
+            left: 2%;
+        }
+
+        .heart2 {
+            --scale: 1.2;
+            --rotate: 47deg;
+            --animation-duration: 3.5s;
+            bottom: -200px;
+            left: 23%;
+        }
+
+        .heart3 {
+            --scale: 0.9;
+            --rotate: 44deg;
+            --animation-duration: 2.1s;
+            bottom: -200px;
+            left: 37%;
+        }
+
+        .heart4 {
+            --scale: 1.5;
+            --rotate: 46deg;
+            --animation-duration: 3.8s;
+            bottom: -200px;
+            left: 52%;
+        }
+
+        .heart5 {
+            --scale: 0.6;
+            --rotate: 43deg;
+            --animation-duration: 1.9s;
+            bottom: -200px;
+            left: 12%;
+        }
+
+        .heart6 {
+            --scale: 1.3;
+            --rotate: 48deg;
+            --animation-duration: 4s;
+            bottom: -200px;
+            left: 66%;
+        }
+
+        .heart7 {
+            --scale: 0.8;
+            --rotate: 41deg;
+            --animation-duration: 2.6s;
+            bottom: -200px;
+            left: 78%;
+        }
+
+        .heart8 {
+            --scale: 1.3;
+            --rotate: 45deg;
+            --animation-duration: 3.2s;
+            bottom: -200px;
+            left: 30%;
+        }
+
+        .heart9 {
+            --scale: 0.75;
+            --rotate: 46deg;
+            --animation-duration: 1.7s;
+            bottom: -200px;
+            left: 89%;
+        }
+
+        .heart10 {
+            --scale: 1.1;
+            --rotate: 44deg;
+            --animation-duration: 2.9s;
+            bottom: -200px;
+            left: 5%;
+        }
+
+        .heart11 {
+            --scale: 1.6;
+            --rotate: 47deg;
+            --animation-duration: 3.7s;
+            bottom: -200px;
+            left: 91%;
+        }
+
+
+        /* Animation trigger class */
+        .animate-hearts {
+            animation: floatUp var(--animation-duration) ease-in-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(var(--scale)) rotate(var(--rotate));
+                bottom: -200px;
+            }
+
+            100% {
+                transform: translateY(calc(-100vh - 400px)) scale(var(--scale)) rotate(var(--rotate));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-heart" id="heart"></div>
+    <span class="text-container">Happy Valentine's Day</span>
+    <span class="click clickAnimation" id="click-text">Click on the heart</span>
+
+    <span class="little-heart heart1"></span>
+    <span class="little-heart heart2"></span>
+    <span class="little-heart heart3"></span>
+    <span class="little-heart heart4"></span>
+    <span class="little-heart heart5"></span>
+    <span class="little-heart heart6"></span>
+    <span class="little-heart heart7"></span>
+    <span class="little-heart heart8"></span>
+    <span class="little-heart heart9"></span>
+    <span class="little-heart heart10"></span>
+    <span class="little-heart heart11"></span>
+
+    <script>
+        const romanticMessages = [
+            "You are my sunshine ☀️",
+            "I love you more than words can say ❤️",
+            "You make my heart skip a beat 💕",
+            "I love your enchanting eyes 😍",
+            "You're the best girlfriend man can ever dream of ❤️",
+            "You are my dream come true 💑",
+            "You're my favorite person in the world ❤️",
+            "Don't have too many chocolates, you're sweet enough already 🍫",
+            "You're my favorite notification ❤️",
+            "You are my daily motivation ❤️",
+            "You came into my life and made it a fairytale ❤️",
+            "You're my favorite hello and my hardest goodbye 💔",
+            "You're my favorite distraction ❤️",
+            "You're the cutest cause of my lack of sleep ❤️",
+            "I stayed up till 12:30 am making this for you, I hope you like it ❤️",
+            "Baby, you light up my heart like no body else 🌟",
+            "Every heartbeat of mine whispers your name ❤️",
+            "You're my better half 💑",
+        ];
+
+        const heart = document.getElementById("heart");
+        const textContainer = document.getElementById("click-text");
+        const hearts = document.querySelectorAll(".little-heart");
+
+        let animationActive = false;
+
+        heart.addEventListener("click", () => {
+            if (animationActive) return;
+            animationActive = true;
+
+            let maxDuration = 0;
+
+            hearts.forEach(heart => {
+                heart.classList.remove("animate-hearts");
+                void heart.offsetWidth;
+
+                const duration = (1.5 + Math.random() * 1.5).toFixed(2);
+                heart.style.setProperty("--animation-duration", `${duration}s`);
+                heart.classList.add("animate-hearts");
+
+                maxDuration = Math.max(maxDuration, parseFloat(duration));
+            });
+
+            textContainer.classList.remove("forcedOpacity");
+            textContainer.classList.add("messageFadeOut");
+
+            setTimeout(() => {
+                const randomMessage = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+                textContainer.textContent = randomMessage;
+                textContainer.classList.add("messageFadeIn");
+                textContainer.classList.remove("messageFadeOut");
+            }, 500);
+
+            setTimeout(() => {
+                textContainer.classList.add("forcedOpacity");
+                textContainer.classList.remove("messageFadeIn");
+                animationActive = false;
+            }, maxDuration * 1000);
+        });
+
+    </script>
+</body>
+
+</html>
